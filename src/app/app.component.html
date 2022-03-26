@@ -1,21 +1,21 @@
 <h1>Selección de modelo</h1>
 <br>
-
+ 
 <div class="contanier">
-
+ 
   <div class="row">
     <div class="col-md-12">
-
+ 
       <div class="input-group mb-3">
-        <select class="form-select" aria-label="Default select example">
-          <option value="Descriptivo">Descriptivo</option>
-          <option value="Diagnostico">Diagnóstico</option>
-          <option value="Predictivo">Predictivo</option>
-          <option value="Prescriptivo">Prescriptivo</option>
+        <select class="form-select" [(ngModel)]="modelo" aria-label="Default select example">
+          <option value="descriptive">Descriptivo</option>
+          <option value="diagnostics">Diagnóstico</option>
+          <option value="models">Predictivo</option>
+          <option value="prevention">Prescriptivo</option>
         </select>
   
       </div>
-
+ 
   
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Nombre del dataset" [(ngModel)]="nombreDataSet" aria-label="Recipient's username"
@@ -37,6 +37,14 @@
         <button type="button" class="btn btn-warning">Clear</button>
       </div>
     </div>
+    <div *ngIf="response">
+      <h1>Modelo creado</h1> 
+      <span>{{response['name']}}</span>
+      <router-outlet></router-outlet>
+    </div>
+    
   </div>
+
 </div>
-<router-outlet></router-outlet>
+ 
+<!--aqui va la respuesta-->
