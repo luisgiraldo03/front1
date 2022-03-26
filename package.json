@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --base-href /front1/",
+    "build": "ng build --base-href front1",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "heroku-postbuild": "ng build --base-href /front1/"
+    "heroku-postbuild": "ng build --base-href front1"
   },
   "private": true,
   "dependencies": {
