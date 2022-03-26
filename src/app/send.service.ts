@@ -11,12 +11,8 @@ export class SendService {
  
   constructor(public http: HttpClient) { }
  
-  save(): Observable<any>{
-    const data = {
-      "modelo": "descriptive",
-      "fecha": "07/01/2021",
-      "nombre": "Test"
-    }
+  save(data): Observable<any>{
+
     const servicePath = environment.rooturl;
     return this.http.post<any>(servicePath, data);
 

@@ -34,12 +34,16 @@ export class AppComponent implements OnInit{
   public onSend(){
  
  
- 
+    
  
     let fechaF = this.pipe.transform(this.fecha, 'MM/dd/yyyy');
+    const data = {
+      "modelo": this.modelo,
+      "fecha": fechaF,
+      "nombre": this.nombreDataSet
+    }
  
- 
-    this.sendService.save().subscribe((data)=>{console.log(data);
+    this.sendService.save(data).subscribe((data)=>{console.log(data);
       this.response=data
     });
  
